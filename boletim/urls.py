@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import include, path
 
 from rest_framework import routers 
-from boletim.boletimaluno import views
+from boletimaluno import views
 
 router = routers.DefaultRouter()
+
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+
+router.register(r'alunos', views.AlunoViewSet)
+router.register(r'disciplina', views.DisciplinaViewSet)
+router.register(r'boletim', views.BoletimViewSet)
+router.register(r'boletim-nota', views.BoletimNotaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
